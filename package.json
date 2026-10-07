@@ -1,0 +1,15 @@
+{
+  "name": "career-portal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI Career Guidance Portal - AI-driven career counseling and skill mapping",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix backend && npm install --prefix frontend",
+    "dev": "concurrently -k -n \"BACKEND,FRONTEND\" -c \"blue,magenta\" \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "db:setup": "npm run db:setup --prefix backend",
+    "ml:train": "npm run ml:train --prefix backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
