@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 import rateLimit from 'express-rate-limit';
 import dotenv from 'dotenv';
 
+
 import authRoutes from './routes/authRoutes.js';
 import careerRoutes from './routes/careerRoutes.js';
 import assessmentRoutes from './routes/assessmentRoutes.js';
@@ -17,7 +18,7 @@ import { errorHandler, notFoundHandler } from './middleware/errorHandler.js';
 dotenv.config();
 
 const app = express();
-
+app.set('trust proxy', 1);
 const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:5173';
 
 // Security headers
